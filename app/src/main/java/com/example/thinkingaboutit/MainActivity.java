@@ -2,6 +2,8 @@ package com.example.thinkingaboutit;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -13,53 +15,33 @@ import android.widget.ImageButton;
 
 import com.google.android.material.button.MaterialButton;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
-    MaterialButton likeButton;
-    ImageButton bookmarkButton;
-    boolean like = true;
-    boolean bookmark = true;
+    RecyclerView recyclerView;
+    LinearLayoutManager linearLayoutManager;
+    AllEntriesRecyclerAdapter allEntriesRecyclerAdapter;
+    ArrayList<Entry> data;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        likeButton = findViewById(R.id.likeButton);
-        bookmarkButton = findViewById(R.id.bookmarkImagebutton);
-        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.popup_animation);
+        data = new ArrayList<>();
+        data.add(new Entry("Feeling really sad today!"));
+        data.add(new Entry("I passed all my exams"));
+        data.add(new Entry("If I could finish this year"));
 
-        likeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (like){
-                    //likeButtonsLayout.startAnimation(animation);
-                    likeButton.setBackgroundColor(Color.parseColor("#66BB6A"));
-                    like = false;
-                }else {
-                    likeButton.setBackgroundColor(Color.parseColor("#A3A3A3"));
-                    like = true;
-                }
-            }
-        });
+        recyclerView = findViewById(R.id.allCardsRecyclerview);
+        linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        allEntriesRecyclerAdapter = new AllEntriesRecyclerAdapter(this, data);
+        recyclerView.setAdapter(allEntriesRecyclerAdapter);
 
-        bookmarkButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (bookmark){
-                    String uri = "@drawable/ic_checked_bookmark";  // where myresource (without the extension) is the file
-                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-                    Drawable res = getResources().getDrawable(imageResource);
-                    bookmarkButton.setImageDrawable(res);
-                    bookmark = false;
-                }else{
-                    String uri = "@drawable/ic_unchecked_bookmark";  // where myresource (without the extension) is the file
-                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-                    Drawable res = getResources().getDrawable(imageResource);
-                    bookmarkButton.setImageDrawable(res);
-                    bookmark = true;
-                }
-            }
-        });
     }
 }
