@@ -29,18 +29,59 @@
                 android:layout_height="match_parent"
                 android:id="@+id/content_constraint_layout">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/appnameTextview"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="thinkingaboutit"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="10dp">
+
+                        <ImageButton
+                            android:id="@+id/navigateImagebutton"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@null"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/appnameTextview"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_navigate" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/appnameTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="thinkingaboutit"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/accountImagebutton"
+                            app:layout_constraintStart_toEndOf="@+id/navigateImagebutton"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageButton
+                            android:id="@+id/accountImagebutton"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@null"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/appnameTextview"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_account" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.appbar.MaterialToolbar>
+
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/allArticlesRecyclerview"
@@ -50,7 +91,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/appnameTextview" />
+                    app:layout_constraintTop_toBottomOf="@+id/toolBar" />
 
                 <FrameLayout
                     android:layout_width="match_parent"

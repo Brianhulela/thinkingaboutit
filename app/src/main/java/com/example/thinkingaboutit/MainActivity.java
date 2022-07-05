@@ -2,15 +2,15 @@ package com.example.thinkingaboutit;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.ImageButton;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -25,9 +25,12 @@ public class MainActivity extends AppCompatActivity {
     ArticlesRecyclerAdapter articlesRecyclerAdapter;
     ArrayList<Article> data;
     ExtendedFloatingActionButton floatingActionButton;
-    MaterialTextView appnameTextview;
+
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    ImageButton navigationImagebutton;
+
+    ImageButton accountImagebutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.navigationView);
-        appnameTextview = findViewById(R.id.appnameTextview);
-        appnameTextview.setOnClickListener(new View.OnClickListener() {
+        navigationImagebutton = findViewById(R.id.navigateImagebutton);
+        navigationImagebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.open();
@@ -76,6 +79,14 @@ public class MainActivity extends AppCompatActivity {
             menuItem.isChecked();
             drawerLayout.close();
             return true;
+        });
+
+        accountImagebutton = findViewById(R.id.accountImagebutton);
+        accountImagebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openFragment("account");
+            }
         });
 
     }
@@ -96,6 +107,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "settings":
                 fragmentTransaction.replace(R.id.content_constraint_layout, new SettingsFragment()).addToBackStack(null);
+                break;
+            case "account":
+                fragmentTransaction.replace(R.id.content_constraint_layout, new AccountFragment()).addToBackStack(null);
                 break;
         }
         fragmentTransaction.commit();
