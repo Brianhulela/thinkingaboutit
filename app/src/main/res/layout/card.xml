@@ -60,13 +60,12 @@
                 android:layout_height="50dp"
                 android:layout_marginEnd="16dp"
                 android:button="@drawable/ic_unchecked_bookmark"
-                app:buttonTint="#787878"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageButton"
                 app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,7 +73,6 @@
                 android:layout_marginEnd="123dp"
                 android:layout_marginBottom="8dp"
                 android:text="Brian Makhubele"
-                android:textColor="#008175"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/materialTextView2"
@@ -100,13 +98,12 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:button="@drawable/ic_comment_icon"
-                app:buttonTint="#787878"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/bookmarkImagebutton"
                 app:layout_constraintStart_toEndOf="@+id/likeCheckbox"
                 app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -116,7 +113,7 @@
                 app:layout_constraintStart_toEndOf="@+id/imageButton"
                 app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -128,7 +125,7 @@
                 app:layout_constraintStart_toEndOf="@+id/likeCheckbox"
                 app:layout_constraintTop_toTopOf="@+id/likeCheckbox" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

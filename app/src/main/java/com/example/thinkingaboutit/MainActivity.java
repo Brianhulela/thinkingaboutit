@@ -35,9 +35,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         data = new ArrayList<>();
-        data.add(new Article("One article", "This is just a test to see if the article things work just find. Don't mind me at all!"));
-        data.add(new Article("Two article", "This is just a test to see if the article things work just find. Don't mind me at all!"));
-        data.add(new Article("Three article", "This is just a test to see if the article things work just find. Don't mind me at all!"));
+        Article article = new Article("One article", "This is just a test to see if the article things work just find. Don't mind me at all!");
+        Article article1 = new Article("Two article", "This is just a test to see if the article things work just find. Don't mind me at all!");
+        Article article2 = new Article("Three article", "This is just a test to see if the article things work just find. Don't mind me at all!");
+        data.add(article);
+        data.add(article1);
+        data.add(article2);
+
 
         recyclerView = findViewById(R.id.allArticlesRecyclerview);
         linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
@@ -68,10 +72,32 @@ public class MainActivity extends AppCompatActivity {
 
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             // Handle menu item selected
-            Toast.makeText(this, menuItem.getTitle().toString(), Toast.LENGTH_SHORT).show();
+            openFragment(menuItem.getTitle().toString());
             menuItem.isChecked();
             drawerLayout.close();
             return true;
         });
+
+    }
+
+    public void openFragment(String fragmentName){
+        FragmentManager fm = getSupportFragmentManager();
+        if(fm.getBackStackEntryCount()>0) {
+            fm.popBackStack();
+        }
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+
+        switch(fragmentName) {
+            case "bookmarked":
+                fragmentTransaction.replace(R.id.content_constraint_layout, new BookmarkedFragment()).addToBackStack(null);
+                break;
+            case "liked":
+                fragmentTransaction.replace(R.id.content_constraint_layout, new LikedFragment()).addToBackStack(null);
+                break;
+            case "settings":
+                fragmentTransaction.replace(R.id.content_constraint_layout, new SettingsFragment()).addToBackStack(null);
+                break;
+        }
+        fragmentTransaction.commit();
     }
 }
