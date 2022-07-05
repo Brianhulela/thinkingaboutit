@@ -1,16 +1,19 @@
 package com.example.thinkingaboutit;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
 
@@ -73,7 +76,17 @@ public class ArticlesRecyclerAdapter extends RecyclerView.Adapter<ArticlesRecycl
                 }
             }
         });
+
+        holder.articleCardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                Fragment viewArticleFragment = new ViewArticleFragment();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.constraintLayout, viewArticleFragment).addToBackStack(null).commit();
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {
@@ -85,12 +98,14 @@ public class ArticlesRecyclerAdapter extends RecyclerView.Adapter<ArticlesRecycl
         MaterialTextView titleTextview;
         MaterialCheckBox likeCheckbox;
         MaterialCheckBox bookmarkImagebutton;
+        MaterialCardView articleCardview;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTextview = itemView.findViewById(R.id.titleTextview);
             bookmarkImagebutton = itemView.findViewById(R.id.bookmarkImagebutton);
             likeCheckbox = itemView.findViewById(R.id.likeCheckbox);
+            articleCardview = itemView.findViewById(R.id.articleCardview);
         }
     }
 }
