@@ -17,7 +17,10 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class ArticlesRecyclerAdapter extends RecyclerView.Adapter<ArticlesRecyclerAdapter.ViewHolder> {
 
@@ -42,6 +45,8 @@ public class ArticlesRecyclerAdapter extends RecyclerView.Adapter<ArticlesRecycl
 
         Article article = data.get(holder.getAdapterPosition());
         holder.titleTextview.setText(article.title);
+        holder.articleTextview.setText(article.articleText);
+        holder.dateTimeTextview.setText(article.date);
 
         holder.bookmarkImagebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +58,7 @@ public class ArticlesRecyclerAdapter extends RecyclerView.Adapter<ArticlesRecycl
                     holder.bookmarkImagebutton.setButtonDrawable(res);
                 }else {
                     article.bookmark = false;
-                    int imageResource = context.getResources().getIdentifier("@drawable/ic_unchecked_bookmark", null, context.getPackageName());
+                    int imageResource = context.getResources().getIdentifier("@drawable/ic_checked_bookmark", null, context.getPackageName());
                     Drawable res = context.getResources().getDrawable(imageResource);
                     holder.bookmarkImagebutton.setButtonDrawable(res);
                 }
@@ -70,7 +75,7 @@ public class ArticlesRecyclerAdapter extends RecyclerView.Adapter<ArticlesRecycl
                     holder.likeCheckbox.setButtonDrawable(res);
                 }else {
                     article.like = false;
-                    int imageResource = context.getResources().getIdentifier("@drawable/ic_unlike", null, context.getPackageName());
+                    int imageResource = context.getResources().getIdentifier("@drawable/ic_liked", null, context.getPackageName());
                     Drawable res = context.getResources().getDrawable(imageResource);
                     holder.likeCheckbox.setButtonDrawable(res);
                 }
@@ -96,6 +101,8 @@ public class ArticlesRecyclerAdapter extends RecyclerView.Adapter<ArticlesRecycl
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         MaterialTextView titleTextview;
+        MaterialTextView dateTimeTextview;
+        MaterialTextView articleTextview;
         MaterialCheckBox likeCheckbox;
         MaterialCheckBox bookmarkImagebutton;
         MaterialCardView articleCardview;
@@ -103,6 +110,8 @@ public class ArticlesRecyclerAdapter extends RecyclerView.Adapter<ArticlesRecycl
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTextview = itemView.findViewById(R.id.titleTextview);
+            dateTimeTextview = itemView.findViewById(R.id.dateTimeTextview);
+            articleTextview = itemView.findViewById(R.id.articleTextview);
             bookmarkImagebutton = itemView.findViewById(R.id.bookmarkImagebutton);
             likeCheckbox = itemView.findViewById(R.id.likeCheckbox);
             articleCardview = itemView.findViewById(R.id.articleCardview);

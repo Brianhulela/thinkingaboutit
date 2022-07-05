@@ -14,11 +14,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="4dp"
         app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        app:strokeWidth="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -41,7 +43,7 @@
                 app:layout_constraintTop_toTopOf="parent"></com.google.android.material.textview.MaterialTextView>
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/materialTextView2"
+                android:id="@+id/articleTextview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -59,11 +61,11 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="16dp"
-                android:button="@drawable/ic_unchecked_bookmark"
+                android:button="@drawable/ic_checked_bookmark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageButton"
-                app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
+                app:layout_constraintTop_toBottomOf="@+id/articleTextview" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView2"
@@ -75,8 +77,8 @@
                 android:text="Brian Makhubele"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/materialTextView2"
-                app:layout_constraintEnd_toStartOf="@+id/textView6"
+                app:layout_constraintBottom_toTopOf="@+id/articleTextview"
+                app:layout_constraintEnd_toStartOf="@+id/dateTimeTextview"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleTextview" />
@@ -86,22 +88,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:button="@drawable/ic_unlike"
+                android:button="@drawable/ic_liked"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageButton"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
+                app:layout_constraintTop_toBottomOf="@+id/articleTextview" />
 
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/imageButton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:button="@drawable/ic_comment_icon"
+                android:button="@drawable/ic_comment"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/bookmarkImagebutton"
                 app:layout_constraintStart_toEndOf="@+id/likeCheckbox"
-                app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
+                app:layout_constraintTop_toBottomOf="@+id/articleTextview" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView"
@@ -111,7 +113,7 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageButton"
-                app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
+                app:layout_constraintTop_toBottomOf="@+id/articleTextview" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView4"
@@ -126,7 +128,7 @@
                 app:layout_constraintTop_toTopOf="@+id/likeCheckbox" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textView6"
+                android:id="@+id/dateTimeTextview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
