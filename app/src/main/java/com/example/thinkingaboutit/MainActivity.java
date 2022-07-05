@@ -1,6 +1,7 @@
 package com.example.thinkingaboutit;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -9,8 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
 
@@ -21,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     ArticlesRecyclerAdapter articlesRecyclerAdapter;
     ArrayList<Article> data;
     ExtendedFloatingActionButton floatingActionButton;
+    MaterialTextView appnameTextview;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +51,27 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                fragmentTransaction.replace(R.id.constraintLayout, new CreateArticleFragment()).addToBackStack(null);
+                fragmentTransaction.replace(R.id.content_constraint_layout, new CreateArticleFragment()).addToBackStack(null);
                 fragmentTransaction.commit();
             }
+        });
+
+        drawerLayout = findViewById(R.id.drawerLayout);
+        navigationView = findViewById(R.id.navigationView);
+        appnameTextview = findViewById(R.id.appnameTextview);
+        appnameTextview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.open();
+            }
+        });
+
+        navigationView.setNavigationItemSelectedListener(menuItem -> {
+            // Handle menu item selected
+            Toast.makeText(this, menuItem.getTitle().toString(), Toast.LENGTH_SHORT).show();
+            menuItem.isChecked();
+            drawerLayout.close();
+            return true;
         });
     }
 }
