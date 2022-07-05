@@ -47,24 +47,24 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
                 android:text="This page shares my best articles to read on topics like health, happiness, creativity, productivity and more. The central question that drives my work is, “How can we live better?” To answer that question, I like to write about science-based ways to solve practical problems.  You’ll find interesting articles to read on topics like how to stop procrastinating as well as personal recommendations like my list of the best books to read and my minimalist travel guide. Ready to dive in? You can use the categories below to browse my best articles."
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/bookmarkImagebutton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"></com.google.android.material.textview.MaterialTextView>
 
-            <ImageButton
+            <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/bookmarkImagebutton"
                 android:layout_width="50dp"
-                android:layout_height="30dp"
+                android:layout_height="50dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                android:background="@null"
+                android:button="@drawable/ic_unchecked_bookmark"
+                app:buttonTint="#787878"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/materialTextView2"
-                app:srcCompat="@drawable/ic_unchecked_bookmark" />
+                app:layout_constraintStart_toEndOf="@+id/imageButton"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -78,6 +78,51 @@
                 app:layout_constraintBottom_toTopOf="@+id/materialTextView2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleTextview" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/likeCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:button="@drawable/ic_unlike"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/imageButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:button="@drawable/ic_comment_icon"
+                app:buttonTint="#787878"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bookmarkImagebutton"
+                app:layout_constraintStart_toEndOf="@+id/likeCheckbox"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageButton"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="13dp"
+                android:text="5"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/likeCheckbox"
+                app:layout_constraintStart_toEndOf="@+id/likeCheckbox"
+                app:layout_constraintTop_toTopOf="@+id/likeCheckbox" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

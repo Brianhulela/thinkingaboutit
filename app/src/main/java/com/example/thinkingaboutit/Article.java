@@ -1,11 +1,13 @@
 package com.example.thinkingaboutit;
 
-public class Entry {
+public class Article {
     String title;
+    boolean like;
     boolean bookmark;
 
-    public Entry(String title){
+    public Article(String title){
         this.title = title;
+        this.like = false;
         this.bookmark = false;
     }
 }

@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/ic_check.xml" value="0.184" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/ic_checked_bookmark.xml" value="0.184" />
+        <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/ic_comment.xml" value="0.184" />
+        <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/ic_like.xml" value="0.1" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/ic_unchecked_bookmark.xml" value="0.184" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/card.xml" value="0.3333333333333333" />
