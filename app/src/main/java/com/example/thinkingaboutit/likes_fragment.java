@@ -2,11 +2,17 @@ package com.example.thinkingaboutit;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +20,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class likes_fragment extends Fragment {
+
+    RecyclerView likesRecyclerview;
+    RecyclerView.LayoutManager layoutManager;
+    LikesRecyclerAdapter likesRecyclerAdapter;
+    ArrayList<Like> data;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,5 +71,22 @@ public class likes_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.likes_fragment, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        data = new ArrayList<>();
+        data.add(new Like("Brian Makhubele"));
+        data.add(new Like("Bheki Twala"));
+        data.add(new Like("Motheo Tsirwe"));
+        data.add(new Like("Phila Shoba"));
+
+        likesRecyclerview = view.findViewById(R.id.likesRecyclerview);
+        layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
+        likesRecyclerAdapter = new LikesRecyclerAdapter(data, getContext());
+        likesRecyclerview.setLayoutManager(layoutManager);
+        likesRecyclerview.setAdapter(likesRecyclerAdapter);
     }
 }
