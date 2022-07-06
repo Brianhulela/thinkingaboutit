@@ -8,18 +8,23 @@
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/ic_checked_bookmark.xml" value="0.184" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/ic_comment.xml" value="0.184" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/ic_like.xml" value="0.1" />
+        <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/ic_liked.xml" value="0.1" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/ic_navigate.xml" value="0.1" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/ic_unchecked_bookmark.xml" value="0.184" />
+        <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/drawable/tab_indicator.xml" value="0.1" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/account_fragment.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/activity_main.xml" value="0.39323220536756126" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/bookmarked_fragment.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/card.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/comment.xml" value="0.22" />
+        <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/comments_fragment.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/create_article_fragment.xml" value="0.22" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/header_navigation_drawer.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/liked_fragment.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/likes_fragment.xml" value="0.29814814814814816" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/navigation_drawer.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/settings_fragment.xml" value="0.17447916666666666" />
-        <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/view_article_fragment.xml" value="0.3588924387646432" />
+        <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/layout/view_article_fragment.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/menu/navigation_drawer.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/Brian/AndroidStudioProjects/thinkingaboutit/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>

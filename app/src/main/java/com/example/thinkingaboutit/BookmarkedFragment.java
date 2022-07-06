@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -51,4 +52,11 @@ public class BookmarkedFragment extends Fragment {
 
     }
 
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        if(mainActivity.fm.getBackStackEntryCount()==0) {
+            mainActivity.appnameTextview.setText(R.string.app_name);
+        }
+    }
 }

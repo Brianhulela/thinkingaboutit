@@ -49,4 +49,12 @@ public class LikedFragment extends Fragment {
         likedRecyclerview.setAdapter(likedArticlesRecyclerAdapter);
 
     }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        if(mainActivity.fm.getBackStackEntryCount()==0) {
+            mainActivity.appnameTextview.setText(R.string.app_name);
+        }
+    }
 }

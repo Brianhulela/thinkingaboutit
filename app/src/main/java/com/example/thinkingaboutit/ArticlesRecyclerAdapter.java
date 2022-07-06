@@ -87,7 +87,7 @@ public class ArticlesRecyclerAdapter extends RecyclerView.Adapter<ArticlesRecycl
             public void onClick(View view) {
                 AppCompatActivity activity = (AppCompatActivity) view.getContext();
                 Fragment viewArticleFragment = new ViewArticleFragment();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.content_constraint_layout, viewArticleFragment).addToBackStack(null).commit();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.replaceConstraintlayout, viewArticleFragment).addToBackStack(null).commit();
             }
         });
     }

@@ -31,11 +31,16 @@ public class MainActivity extends AppCompatActivity {
     ImageButton navigationImagebutton;
 
     ImageButton accountImagebutton;
+    MaterialTextView appnameTextview;
+
+    FragmentManager fm = getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        appnameTextview = findViewById(R.id.appnameTextview);
 
         data = new ArrayList<>();
         Article article = new Article("One article", "This is just a test to see if the article things work just find. Don't mind me at all!");
@@ -58,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                fragmentTransaction.replace(R.id.content_constraint_layout, new CreateArticleFragment()).addToBackStack(null);
+                fragmentTransaction.replace(R.id.replaceConstraintlayout, new CreateArticleFragment()).addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
@@ -92,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openFragment(String fragmentName){
-        FragmentManager fm = getSupportFragmentManager();
+
         if(fm.getBackStackEntryCount()>0) {
             fm.popBackStack();
         }
@@ -100,18 +105,23 @@ public class MainActivity extends AppCompatActivity {
 
         switch(fragmentName) {
             case "bookmarked":
-                fragmentTransaction.replace(R.id.content_constraint_layout, new BookmarkedFragment()).addToBackStack(null);
+                fragmentTransaction.replace(R.id.replaceConstraintlayout, new BookmarkedFragment()).addToBackStack(null);
+                appnameTextview.setText("bookmarks");
                 break;
             case "liked":
-                fragmentTransaction.replace(R.id.content_constraint_layout, new LikedFragment()).addToBackStack(null);
+                fragmentTransaction.replace(R.id.replaceConstraintlayout, new LikedFragment()).addToBackStack(null);
+                appnameTextview.setText("liked");
                 break;
             case "settings":
-                fragmentTransaction.replace(R.id.content_constraint_layout, new SettingsFragment()).addToBackStack(null);
+                fragmentTransaction.replace(R.id.replaceConstraintlayout, new SettingsFragment()).addToBackStack(null);
+                appnameTextview.setText("settings");
                 break;
             case "account":
-                fragmentTransaction.replace(R.id.content_constraint_layout, new AccountFragment()).addToBackStack(null);
+                fragmentTransaction.replace(R.id.replaceConstraintlayout, new AccountFragment()).addToBackStack(null);
+                appnameTextview.setText("account");
                 break;
         }
         fragmentTransaction.commit();
     }
+
 }

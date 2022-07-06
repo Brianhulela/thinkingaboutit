@@ -29,4 +29,12 @@ public class SettingsFragment extends Fragment {
         mainActivity = (MainActivity) getActivity();
         data = mainActivity.data;
     }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        if(mainActivity.fm.getBackStackEntryCount()==0) {
+            mainActivity.appnameTextview.setText(R.string.app_name);
+        }
+    }
 }
